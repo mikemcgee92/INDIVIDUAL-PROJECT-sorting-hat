@@ -8,7 +8,18 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  
+  <h1>Welcome to Hogwarts!</h1>
+  <button type="button" class="btn btn-primary" id="btn-new">Click here to add a student</button>
+  <form id="new-student-form" style="display: none;">
+    <div class="mb-3">
+      <input type="text" class="form-control" id="form-name=input" placeholder="Student Name"/>
+      <button type="submit" class="btn btn-success" id="btn-enroll">Enroll & Sort</button>
+    </div>
+  </form>
+  <div id="card-container">
+    <!-- generate cards here -->
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </body>
