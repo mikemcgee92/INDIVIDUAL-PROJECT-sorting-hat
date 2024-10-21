@@ -2,7 +2,6 @@
 
 const cardContainer = document.querySelector('#card-container');
 const form = document.querySelector('#new-student-form');
-const formNameInput = document.querySelector('#form-name-input')
 const btnNew = document.querySelector('#btn-new');
 const btnEnroll = document.querySelector('#btn-enroll');
 
@@ -51,11 +50,12 @@ const submitForm = (e) => {
 
   let newStudentObj = {
     id: students.length + 1,
-    name: formNameInput.value,
+    name: document.querySelector("#form-name-input").value,
     sort: sortStudent()
   };
   students.push(newStudentObj);
-  
+
+  render();
   form.reset();
   toggleForm();
 };
@@ -65,6 +65,7 @@ const submitForm = (e) => {
 /*---------rendering funcs-----------*/
 
 const render = () => {
+  cardContainer.innerHTML = '';
   students.map((studentObj) => {
     cardContainer.innerHTML += `
       <div class="card" style="width: 18rem;">
@@ -86,14 +87,8 @@ btnNew.addEventListener("click", () => {
   toggleForm();
 });
 
-btnEnroll.addEventListener("submit", () => {
-  submitForm();
-});
+form.addEventListener("submit", submitForm);
 
 /*------------------------------------*/
 
-const startApp = () => {
-  render();
-};
-
-startApp();
+render();
