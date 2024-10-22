@@ -11,10 +11,31 @@
   <h1>Welcome to Hogwarts!</h1>
   <button type="button" class="btn btn-primary" id="btn-new">Click here to add a student</button>
 
+  <!-- filtering -->
+  <div class="btn-group" role="group" id="filter-buttons">
+    <input type="radio" class="btn-check" name="btnradio" id="btn-filter-all" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="btn-filter-all">All</label>
+
+    <input type="radio" class="btn-check" name="btnradio" id="btn-filter-gryffindor" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="btn-filter-gryffindor">Gryffindor</label>
+
+    <input type="radio" class="btn-check" name="btnradio" id="btn-filter-hufflepuff" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="btn-filter-hufflepuff">Hufflepuff</label>
+
+    <input type="radio" class="btn-check" name="btnradio" id="btn-filter-ravenclaw" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="btn-filter-ravenclaw">Ravenclaw</label>
+
+    <input type="radio" class="btn-check" name="btnradio" id="btn-filter-slytherin" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="btn-filter-slytherin">Slytherin</label>
+
+    <input type="radio" class="btn-check" name="btnradio" id="btn-filter-voldemort" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="btn-filter-voldemort">Voldemort's Army</label>
+  </div>
+
   <!-- new student form -->
   <form id="new-student-form" style="display: none;">
     <div class="mb-3">
-      <input type="text" class="form-control" id="form-name-input" placeholder="Student Name">
+      <input type="text" class="form-control" id="form-name-input" placeholder="Student Name" required>
       <button type="submit" class="btn btn-success" id="btn-enroll">Enroll & Sort</button>
     </div>
   </form>
