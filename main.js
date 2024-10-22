@@ -50,10 +50,12 @@ let students = [
 //
 /*-----utility functions-------------*/
 
+//show/hide new student entry form
 const toggleForm = () => {
   form.style.display = form.style.display === 'none' ? 'block' : 'none';
 };
 
+//add a random house assignment to a new student object
 const sortStudent = () => {
   const randomValue = Math.floor(Math.random() * (4 - 1)) + 1;
   let sortString = 'Unsorted'
@@ -74,6 +76,7 @@ const sortStudent = () => {
   return sortString;
 };
 
+//process into array and add to display
 const submitForm = (e) => {
   e.preventDefault();
 
@@ -84,10 +87,22 @@ const submitForm = (e) => {
   };
   students.push(newStudentObj);
 
-  render();
+  render(students);
+  btnFilterAll.checked = true;
   form.reset();
   toggleForm();
 };
+
+//move expelled student into voldemort
+cardContainer.addEventListener("click", (e) => {
+  if (e.target.id.includes("expel")) {
+    const [, id] = e.target.id.split("--");
+    const index = students.findIndex((e) => e.id === Number(id));
+    students[index].sort = "Voldemort's Army";
+    render(filter("Voldemort's Army"));
+    btnFilterVoldemort.checked = true;
+  }
+})
 
 /*-----------------------------------*/
 //
@@ -110,6 +125,15 @@ const filter = (target) => {
   return filteredStudents;
 }
 
+//hide expel button for expelled students
+const expelHide = (object) => {
+  if (object.sort === "Voldemort's Army") {
+    return `Expelled`
+  } else {
+    return `Expel`
+  }
+}
+
 //renders cards to DOM; takes in an array as a parameter
 const render = (array) => {
   cardContainer.innerHTML = '';
@@ -119,7 +143,7 @@ const render = (array) => {
         <div class="card-body">
           <h5 class="card-title">${studentObj.name}</h5>
           <p class="card-text">${studentObj.sort}</p>
-          <button type="button" class="btn btn-danger">Expel</button>
+          <button type="button" class="btn btn-danger" id="expel--${studentObj.id}">${expelHide(studentObj)}</button>
         </div>
       </div>
     `
@@ -143,6 +167,11 @@ const filterRender = () => {
   }
 }
 
+//sets the default state of the radio button group and renders output to DOM
+const startApp = () => {
+  btnFilterAll.checked = true;
+  render(students);
+}
 
 /*-----------------------------------*/
 //
@@ -160,4 +189,4 @@ form.addEventListener("submit", submitForm);
 
 /*------------------------------------*/
 
-render(students);
+startApp();
