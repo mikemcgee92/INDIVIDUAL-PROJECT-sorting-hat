@@ -76,6 +76,29 @@ const sortStudent = () => {
   return sortString;
 };
 
+//get a shortened version of sort strings to use in template literals for styling
+const sortShorten = (house) => {
+  let newString = '';
+  switch (house) {
+    case 'Gryffindor':
+      newString = 'gryf';
+      break;
+    case 'Hufflepuff':
+      newString = 'huff';
+      break;
+    case 'Ravenclaw':
+      newString = 'rave';
+      break;
+    case 'Slytherin':
+      newString = 'slyt';
+      break;
+    case "Voldemort's Army":
+      newString = 'vold';
+      break;
+  }
+  return newString;
+}
+
 //process into array and add to display
 const submitForm = (e) => {
   e.preventDefault();
@@ -108,8 +131,6 @@ cardContainer.addEventListener("click", (e) => {
 //
 /*---------rendering funcs-----------*/
 
-//TODO: Change 'Expel' button to 'Restore' on expelled student cards
-
 //creates and returns a filtered array
 const filter = (target) => {
   let filteredStudents = [];
@@ -139,8 +160,8 @@ const render = (array) => {
   cardContainer.innerHTML = '';
   array.map((studentObj) => {
     cardContainer.innerHTML += `
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
+      <div class="card" style="width: 16rem;">
+        <div class="card-body card-${sortShorten(studentObj.sort)}">
           <h5 class="card-title">${studentObj.name}</h5>
           <p class="card-text">${studentObj.sort}</p>
           <button type="button" class="btn btn-danger" id="expel--${studentObj.id}">${expelHide(studentObj)}</button>
