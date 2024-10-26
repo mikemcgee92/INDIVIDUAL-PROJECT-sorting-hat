@@ -143,6 +143,7 @@ const filter = (target) => {
     };
   });
 
+  filteredStudents.sort((studentObj, otherStudent) => studentObj.name.localeCompare(otherStudent.name));
   return filteredStudents;
 };
 
@@ -156,6 +157,7 @@ const filterOutVold = () => {
     };
   });
 
+  filteredStudents.sort((studentObj, otherStudent) => studentObj.name.localeCompare(otherStudent.name));
   return filteredStudents;
 };
 
