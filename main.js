@@ -57,7 +57,7 @@ const toggleForm = () => {
 
 //add a random house assignment to a new student object
 const sortStudent = () => {
-  const randomValue = Math.floor(Math.random() * (4 - 1)) + 1;
+  const randomValue = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
   let sortString = 'Unsorted'
   switch (randomValue) {
     case 1:
@@ -110,7 +110,7 @@ const submitForm = (e) => {
   };
   students.push(newStudentObj);
 
-  render(students);
+  render(filterOutVold());
   btnFilterAll.checked = true;
   form.reset();
   toggleForm();
