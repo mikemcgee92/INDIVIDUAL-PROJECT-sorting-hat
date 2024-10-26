@@ -50,3 +50,9 @@ body {
   background-color: gray;
   color: black;
 }
+
+.card-vold button {
+  background-color: lightgray;
+  border: none;
+  color: darkgrey;
+}
