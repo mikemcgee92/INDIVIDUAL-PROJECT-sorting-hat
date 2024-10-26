@@ -1,57 +1,29 @@
-# Sorting Hat
+# Sorting Hat  [![Netlify Status](https://api.netlify.com/api/v1/badges/df0c1c9a-e294-49fa-8fa4-193599d9bf8a/deploy-status)](https://app.netlify.com/sites/mcgee-sorting-hat/deploys)
 
-## Goals
-The goal of this project is to test your knowledge and to have a FUN time stretching yourself on your FIRST independent application that will become a part of your portfolio.
+This app allows users to create and 'expel' student entries that are randomly sorted between four houses.
 
-Focus on MVP. Do not spend a ton of time styling initially. Hit functionality first and then spend time on the styling of the project using bootstrap.
+[View App](https://mcgee-sorting-hat.netlify.app/)
 
-- READ THROUGH ALL OF THE INFORMATION BELOW before planning how you will tackle the project.
-- Check the Issue Tickets to organize your process. You will have all week in class to work on this in class. 
-- PLEASE submit questions in help tickets if you need help. We will guide you to the resources that are available to you.
-- When done, tell an instructor. Everyone will present how far they got AND their favorite piece of code that they wrote to an instructor.
-- MOST OF ALL HAVE FUN!!!!!
+## About the User 
+- The ideal user is a teacher or team leader
+- They would like to use a randomized sort to assign groups
+- The problem this app solves is allowing users to input names and sort randomly into groups without the need for more decision making or perihpherals like dice or cards
 
-## Instructions
-You are in charge of bringing the Hogwarts sorting hat to life! 
+## Features 
+- Ability to add new students and have them randomly sorted into 4 houses, then each one gets a card output to the DOM.
+- Each card is colored based on house for extra readability.
+- The user can filter the output so that it only shows cards from specific groups
+- Entries that are 'expelled' from the roster show up in a separate category called Voldemort's Army.
 
-This is what the finished app should have:
-- To start off with, you will use a [bootstrap card](https://getbootstrap.com/docs/5.0/components/card/#header-and-footer) to have your sorting hat introduce itself and start the sorting process (by clicking on a button). The form should not be on the DOM until the button click happens.
+## Video Walkthrough of Sorting Hat
+https://www.loom.com/share/0a9583b159be4209a37d37267c6f8c85?sid=0c15aad5-a190-4055-bf95-eaabf7f6829e
 
-- A [bootstrap form](https://getbootstrap.com/docs/5.0/forms/overview/) will then appear to fill in the student's name and a button to sort. This should then assign the student to a random house (Gryffindor, Hufflepuff, Ravenclaw, or Slytherin). 
+## Relevant Links 
+- [Check out the deployed site](https://mcgee-sorting-hat.netlify.app/)
+- [Project Board](https://github.com/users/mikemcgee92/projects/1)
 
-- On sorting a student, the form should clear and a [bootstrap card](https://getbootstrap.com/docs/5.0/components/card/) with the student's name and a random house assignment should print below the form. 
+## Project Screenshots 
+<img width="1148" alt="Example" src="example.jpg">
 
-- You should also be able to expel a student after they have been sorted, which should remove their card from the student array and move them to Moldy Voldy's Army.
-
-In the end, your app will look something like: 
-
-![screencapture-drt-sorting-netlify-app-2022-04-23-14_28_47](https://user-images.githubusercontent.com/29741570/164943525-d20275be-c312-42d1-9730-0c1fd3fd9834.png)
-
-
-<!-- [See Demo](https://drt-sortinghat.netlify.app/)
- -->
-## Technical Requirements
-- You MUST plan your project and highly suggest using issue tickets. There are a few that have been provided for you to use already. Continue to add to these so you know what work you need to complete. 
-- You MAY use the `renderToDom()` function that we worked on in class, but you also need to be able to explain it if you use it
-- You have to create a data structure for your project. Review all the elements that need to be on the DOM and create the structure accordingly
-- You must use [Boostrap](https://getbootstrap.com/) to style your page components
-- You must use a loop other than a `for loop`
-- Your JS file should be comprised of functions, no actions should happen in your code outside of a function except for your initial `startApp()` function
-- Your code MUST be YOUR code. Do not copy and paste code into your project. Type every bit of it out
-- Your HTML and JS should all have proper indentation
-- Helpful Form: An error message shows if a user tries to sort a student without filling out the form
-- Voldermort's Army: Create a separate container of cards that hold the cards for students that have been expelled. These should be styled differently from Hogwarts students.
-- Add filter buttons to filter the non-expelled students by house
-
-## DEFINITION OF DONE
-Once you have completed all the technical requirments, you should complete the following:
-- [README Requirements](https://github.com/orgs/nss-evening-web-development/discussions/13)
-- **RECOMMENDED** Loom Video: [Sign up for Loom](https://www.loom.com/signup) and record a video of you walking through your app 
-
-## Expel Button Hints
-Think of a way you can expel students without just hiding those divs on the page. This would mean when the button is clicked you modify the array of students and pass the new array into your `renderToDom()` function.  Double hint - put a unique id in the student object when you create them.
-
-## Optional Bonus
-- House Colors: The color of the student's card changes depending on which house they were sorted.
-- Card Sorting/Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
-
+## Contributors
+- [Mike McGee](https://github.com/mikemcgee92)
