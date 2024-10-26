@@ -144,16 +144,29 @@ const filter = (target) => {
   });
 
   return filteredStudents;
-}
+};
+
+//filters out Voldemort's Army only and returns array
+const filterOutVold = () => {
+  let filteredStudents = [];
+
+  students.map((studentObj) => {
+    if (studentObj.sort != "Voldemort's Army") {
+      filteredStudents.push(studentObj);
+    };
+  });
+
+  return filteredStudents;
+};
 
 //hide expel button for expelled students
 const expelHide = (object) => {
   if (object.sort === "Voldemort's Army") {
-    return `Expelled`
+    return `Expelled`;
   } else {
-    return `Expel`
-  }
-}
+    return `Expel`;
+  };
+};
 
 //renders cards to DOM; takes in an array as a parameter
 const render = (array) => {
@@ -167,14 +180,14 @@ const render = (array) => {
           <button type="button" class="btn btn-danger" id="expel--${studentObj.id}">${expelHide(studentObj)}</button>
         </div>
       </div>
-    `
-  })
+    `;
+  });
 };
 
 //checks which radio button is checked and renders based on that
 const filterRender = () => {
   if (btnFilterAll.checked === true) {
-    render(students);
+    render(filterOutVold());
   } else if (btnFilterGryffindor.checked === true) {
     render(filter('Gryffindor'));
   } else if (btnFilterHufflepuff.checked === true) {
@@ -191,7 +204,7 @@ const filterRender = () => {
 //sets the default state of the radio button group and renders output to DOM
 const startApp = () => {
   btnFilterAll.checked = true;
-  render(students);
+  render(filterOutVold());
 }
 
 /*-----------------------------------*/
